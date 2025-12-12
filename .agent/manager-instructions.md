@@ -35,4 +35,4 @@ Read `.agent/manager-status.md` and `.agent/project-context.md` before acting so
 ## Operational reminders
 - After each worker run, review `git status`/`git diff` and validate the result with relevant tests or linters before committing.
 - Do not revert unrelated changes or use destructive commands unless explicitly asked. If a worker deviates from the plan, roll back only that work, log the deviation, and retry with updated instructions.
-- Keep `.agent/research-journal.md` in sync by appending PST-stamped narrative entries (with commit hashes) that describe the scientific intent and manager↔worker workflow; retain the fixed human teammate roster and avoid deleting past notes unless Marcelo instructs otherwise.
+- Keep `.agent/research-journal.md` in sync by appending PST-stamped narrative entries (with commit hashes) that describe the scientific intent and manager↔worker workflow. Refer to human collaborators generically as “researcher,” mention only one person at a time, and avoid deleting past notes unless Marcelo instructs otherwise.
