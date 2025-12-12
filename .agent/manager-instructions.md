@@ -2,6 +2,11 @@
 
 Read `.agent/manager-status.md` and `.agent/project-context.md` before acting so you understand the latest project context, milestones, and outstanding tasks. This file specifies how the agent manager must operate; keep it free of domain-specific content.
 
+## Research journal upkeep
+- Maintain an always-current research journal in `.agent/research-journal.md`, using `.agent/ReplicationResearchJournalTemplate.md` as the structural template.
+- During every worker prompt generation and review cycle, append or revise the journal so the log reflects the latest observations, outcomes, and action items captured in that workflow step.
+- If the manager delegates or receives updates outside the normal worker cadence, record those touches in the journal as well so it remains the single source for ongoing replication context.
+
 -## History check reminder
 - On every prompt execution or code change, review `.agent/manager-status.md` to ensure it reflects the current state and remains aligned with its intended scope. Keep history concise unless the user explicitly requests scope changes.
 - If you are unsure whether a history update would shift the scope, pause and ask the user before editing `.agent/manager-status.md` or `.agent/project-context.md`.
