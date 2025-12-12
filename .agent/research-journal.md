@@ -104,23 +104,31 @@
 
 ## 2025-12-12 - Session 2: Continuing Phase 2 Preprocessing
 
-### Manager Session: Worker Prompt #4 Drafted
+### Manager Session: Worker Prompt #4 Drafted (Revised)
 **Step**: Prepare color corrections implementation
 **Manager Activity**:
 - Reviewed current Phase 2 status - Fourier filtering and beam corrections complete
 - Identified remaining Phase 2 task: color corrections for component spectral response
-- Drafted Worker #4 prompt to implement color corrections
+- Drafted initial Worker #4 prompt
+- **User feedback**: Actual ACT passbands available at `/home/jiaqu/NILC/data/ACT_ancillary/`
+- Revised prompt to use real PA5 passband files instead of analytical approximations
+- Updated project-context.md to document passband file locations and format
 
-**Worker #4 Prompt Summary**:
-- Create `color_corrections.py` module with component spectral response functions
-- Implement CMB and kSZ spectral scaling (flat spectrum for kSZ)
-- Integrate color corrections with existing beam matching from `beams.py`
+**Worker #4 Prompt Summary** (Revised):
+- Create `color_corrections.py` module with passband loader
+- Load actual PA5 90 GHz and 150 GHz passbands (3-column format: freq, response, error)
+- Implement component spectrum integration with passbands to compute effective frequencies
+- CMB: Use thermodynamic temperature derivative dB_nu/dT
+- kSZ: Use same derivative (effectively flat spectrum in RJ units)
+- Apply color corrections to normalize maps to consistent units
 - Test with actual 90 GHz and 150 GHz ACT maps
-- Target: Color-corrected maps that account for spectral differences between components
+- Visualize passbands and before/after correction comparison
+
+**Key Insight**: Using actual measured passbands is critical for accurate color corrections, as the effective observing frequency shifts differently for each component based on its spectral energy distribution.
 
 **Decision**: Continue Phase 2 completion before moving to Phase 3 (needlet decomposition)
 
-**Status**: Worker prompt drafted, ready for human operator to execute in worker session
+**Status**: Revised worker prompt ready for human operator to execute in worker session
 
 ---
 

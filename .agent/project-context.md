@@ -28,6 +28,10 @@ We have two ACT frequency maps (90 GHz and 150 GHz) in CAR projection with both 
   - Frequencies: 90 GHz and 150 GHz
 - **Beams**: `/scratch/jiaqu/hack_data/maps/beams/main_beams/`
 - **Mask**: `/scratch/jiaqu/hack_data/masks/ilc_footprint_mask.fits` (analysis footprint)
+- **Passbands**: `/home/jiaqu/NILC/data/ACT_ancillary/`
+  - PA5 90 GHz: `PA5_avg_passband_90_wErr.txt` (3 columns: frequency [GHz], response, error)
+  - PA5 150 GHz: `PA5_avg_passband_150_wErr.txt` (3 columns: frequency [GHz], response, error)
+  - Passbands are needed for color corrections to account for component spectral response
 - **Data documentation**: https://lambda.gsfc.nasa.gov/product/act/act_dr6.02/act_dr6.02_maps_info.html
 
 ## Operational notes for workers
