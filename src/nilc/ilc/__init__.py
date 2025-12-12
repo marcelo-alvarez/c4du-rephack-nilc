@@ -19,6 +19,13 @@ from .covariance import (
     compute_ilc_covariance,
 )
 
+from .weights import (
+    compute_ilc_weights,
+    apply_ilc_weights,
+    separate_component,
+    separate_all_components,
+)
+
 __all__ = [
     # Frequency response functions
     'freq_response_cmb',
@@ -35,4 +42,9 @@ __all__ = [
     'apply_harmonic_exclusion',
     'apply_donut_smoothing',
     'compute_ilc_covariance',
+    # ILC weight computation and component separation
+    'compute_ilc_weights',
+    'apply_ilc_weights',
+    'separate_component',
+    'separate_all_components',
 ]
