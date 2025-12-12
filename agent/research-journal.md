@@ -23,11 +23,11 @@
 2025-12-12 11:02 PST — Commit 861808f  
 Kickoff session between a researcher and the manager focused on translating the NILC paper’s pipeline outline into a concrete repository plan. The manager authored a prompt covering package scaffolding, and the worker followed it to lay down `src/nilc`, tests, and packaging glue so later science tasks (preprocessing, needlets, ILC) can land without churn.
 
-2025-12-12 11:17 PST — Commit 82e51a9  
-After reviewing the freshly created modules, the manager captured Phase 1 completion in `.agent/manager-status.md` so other researchers could track that onboarding artifacts were ready—this cleared the way for science steps instead of infrastructure.
+2025-12-12 11:17 PST — Commit 82e51a9
+After reviewing the freshly created modules, the manager captured Phase 1 completion in `agent/manager-status.md` so other researchers could track that onboarding artifacts were ready—this cleared the way for science steps instead of infrastructure.
 
-2025-12-12 12:17 PST — Commit 7674143  
-Conversation shifted to data provenance: a researcher highlighted the ACT DR6 paths, and the manager baked those references into `.agent/project-context.md`. Workers now have authoritative file locations for CAR maps, beams, and masks, eliminating ambiguity during future physics-driven prompts.
+2025-12-12 12:17 PST — Commit 7674143
+Conversation shifted to data provenance: a researcher highlighted the ACT DR6 paths, and the manager baked those references into `agent/project-context.md`. Workers now have authoritative file locations for CAR maps, beams, and masks, eliminating ambiguity during future physics-driven prompts.
 
 2025-12-12 12:28 PST — Commit 6baf294  
 Manager handed the worker a prompt to prototype CAR map loading/inspection with `pixell`. Worker implemented `map_io.py` plus a visualization harness, demonstrating that ACT maps load with correct geometry—essential validation before attempting needlet-space filtering.

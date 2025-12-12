@@ -1,17 +1,17 @@
 Agent Worker Instructions
 =====================================================
 
-Read this file and `.agent/project-context.md` at the start of every Agent worker session. It defines how a worker should behave when executing a single prompt.
+Read this file and `agent/project-context.md` at the start of every Agent worker session. It defines how a worker should behave when executing a single prompt.
 
 1. Scope & allowed files
 ------------------------
 - Treat each prompt as your entire scope. Do not infer extra tasks from other
   files or background knowledge.
-- Do not read `.agent/manager-status.md` unless the prompt explicitly instructs
+- Do not read `agent/manager-status.md` unless the prompt explicitly instructs
   you to. That file is for the Agent Manager.
-- Only read other `.agent/*` files when the
+- Only read other `agent/*` files when the
   prompt tells you to; rely on the prompt for task context.
-- Unless explicitly told otherwise, do not edit `.agent/` outside the single
+- Unless explicitly told otherwise, do not edit `agent/` outside the single
   document you were asked to update.
 
 2. Safety & workflow
@@ -66,4 +66,4 @@ Follow these instructions on every worker session. If you need to revise this
 guidance, do so carefully and keep a log of why the change was made.
 
 If you introduced infrastructure, scripts, or docs that affect the project context
-or operational guidance, update `.agent/project-context.md` (not this file) before committing.
+or operational guidance, update `agent/project-context.md` (not this file) before committing.

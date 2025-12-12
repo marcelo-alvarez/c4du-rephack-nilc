@@ -49,7 +49,7 @@ Implement a NILC (Needlet Internal Linear Combination) pipeline for ACT cosmolog
 - Implement output and validation (Phase 5)
 
 ## Recent completions
-- 2025-12-12: Created `.agent/` directory structure and initialized manager-status.md
+- 2025-12-12: Created `agent/` directory structure and initialized manager-status.md
 - 2025-12-12: Worker #1 completed - initialized git repo, created Python package structure (src/nilc with 5 modules), test framework, requirements.txt, setup.py, README.md
 - 2025-12-12: Worker #1c completed - successfully pushed all project files to GitHub (17 files total)
 - 2025-12-12: Worker #1d completed - updated and pushed manager-status.md to reflect Phase 1 completion

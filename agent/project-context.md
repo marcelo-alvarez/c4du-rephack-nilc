@@ -35,7 +35,7 @@ We have two ACT frequency maps (90 GHz and 150 GHz) in CAR projection with both 
 - **Data documentation**: https://lambda.gsfc.nasa.gov/product/act/act_dr6.02/act_dr6.02_maps_info.html
 
 ## Operational notes for workers
-- Anchor any worker prompt with: `Read .agent/worker-instructions.md and .agent/project-context.md`.
+- Anchor any worker prompt with: `Read agent/worker-instructions.md and agent/project-context.md`.
 - Provide clear command lists, prioritize raster operations via `pixell` transforms, and include steps to write both CAR and HEALPix maps.
 - Output artifacts should include CAR FITS files (e.g., via `pixell.enmap.write_map`) and HEALPix FITS (e.g., via `healpy.write_map`) for the CMB and kSZ components.
 - Include any validation (e.g., visual spot checks or simple power spectrum comparisons) only if the prompt explicitly requests it.
