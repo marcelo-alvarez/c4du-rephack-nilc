@@ -81,3 +81,4 @@ data/output/*
 # Temporary files
 *.tmp
 *.log
+data/benchmark/*.fits

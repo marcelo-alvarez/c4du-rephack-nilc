@@ -37,7 +37,8 @@ Generate full-sky visualizations and check:
 
 ### 4. Benchmark Comparison
 
-**Note**: Benchmark (correct output) maps will be provided for comparison. When available, compare pipeline outputs to benchmarks:
+**Benchmark maps**: Compare pipeline outputs to the published NILC benchmark maps:
+- **CMB temperature benchmark**: `/secret/path/to/target/output/target_T.fits`
 
 - **Map-level comparison**:
   - Compute pixel-by-pixel difference maps (output - benchmark) for CMB and kSZ components
@@ -63,9 +64,9 @@ Example benchmark comparison commands:
 # Compare output to benchmark maps
 python scripts/compare_to_benchmark.py \
     --output-cmb path/to/output_cmb.fits \
-    --benchmark-cmb path/to/benchmark_cmb.fits \
+    --benchmark-cmb /secret/path/to/target/output/target_T.fits \
     --output-ksz path/to/output_ksz.fits \
-    --benchmark-ksz path/to/benchmark_ksz.fits \
+    --benchmark-ksz /secret/path/to/target/output/benchmark_ksz.fits \
     --format [car|healpix]
 ```
 
@@ -86,7 +87,7 @@ Validation passes if:
 1. All basic data quality checks pass
 2. Power spectra show physically reasonable structure (CMB peaks visible, kSZ subdominant on large scales)
 3. Visual inspection reveals no obvious artifacts
-4. **Benchmark comparison** (when available): Output maps match benchmarks within expected noise/precision limits
+4. **Benchmark comparison**: Output maps match benchmarks within expected noise/precision limits
 5. Input maps can be reconstructed from outputs within noise levels
 
 If validation fails, document whether failures indicate implementation bugs, expected method limitations, or need for parameter adjustments.
