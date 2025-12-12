@@ -12,7 +12,15 @@ from .frequency_response import (
     T_CMB,
 )
 
+from .covariance import (
+    compute_covariance_matrix,
+    apply_harmonic_exclusion,
+    apply_donut_smoothing,
+    compute_ilc_covariance,
+)
+
 __all__ = [
+    # Frequency response functions
     'freq_response_cmb',
     'freq_response_ksz',
     'freq_response_tsz',
@@ -22,4 +30,9 @@ __all__ = [
     'k_BOLTZMANN',
     'c_LIGHT',
     'T_CMB',
+    # Covariance computation and bias mitigation
+    'compute_covariance_matrix',
+    'apply_harmonic_exclusion',
+    'apply_donut_smoothing',
+    'compute_ilc_covariance',
 ]

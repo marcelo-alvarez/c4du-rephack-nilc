@@ -19,6 +19,7 @@ We have two ACT frequency maps (90 GHz and 150 GHz) in CAR projection with both 
 - Two frequencies only; all covariance matrices, ILC weights, and component separation use this pair.
 - Dependencies available: `numpy`, `scipy`, `matplotlib`, `pixell`, `healpy`.
 - Processing must respect ACT beam profiles with scale-dependent color corrections for frequency-dependent beams.
+- Frequency response functions implemented for CMB (f=1), kSZ (f=1), tSZ (f(x) = x(e^x+1)/(e^x-1) - 4), and CIB (modified blackbody: ν^β B_ν(T_dust) with T_dust=20K, β=1.5, normalized at 353 GHz).
 
 ## Data locations
 - **Maps**: `/scratch/jiaqu/hack_data/maps/`
