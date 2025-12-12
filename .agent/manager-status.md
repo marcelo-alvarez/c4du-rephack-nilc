@@ -4,10 +4,12 @@
 Implement a NILC (Needlet Internal Linear Combination) pipeline for ACT cosmology data processing, following arXiv:2307.01258 Section III. The pipeline will process two ACT frequency maps (90 GHz and 150 GHz) in CAR projection to separate CMB and kSZ components.
 
 ## Current state
-- **Status**: Phase 2 complete - ready for Phase 3 (needlet decomposition)
+- **Status**: Phase 2 complete - Phase 4 (ILC) in development on ilc-component-separation branch
 - **Last updated**: 2025-12-12
 - **Repository**: https://github.com/marcelo-alvarez/c4du-rephack-nilc
-- **Next worker**: Worker #5 - implement needlet decomposition (Section III-B)
+- **Branch**: ilc-component-separation
+- **Parallel work**: Abhi on needlet-decomp-abhi (Phase 3), Frank on main (Phase 2 complete)
+- **Next worker**: Worker #5-ILC - implement ILC covariance and weights (Section III-C)
 
 ## Milestones
 
@@ -31,11 +33,11 @@ Implement a NILC (Needlet Internal Linear Combination) pipeline for ACT cosmolog
 - [ ] Validate needlet localization in ell-space
 
 ### Phase 4: ILC weights and component separation (Section III-C)
-- [ ] Implement in-band covariance matrix computation
-- [ ] Implement harmonic-space bias exclusion (large scales)
-- [ ] Implement real-space "donut" smoothing (small scales)
-- [ ] Compute ILC weights per needlet scale
-- [ ] Apply weights to separate CMB and kSZ components
+- [x] Implement in-band covariance matrix computation
+- [x] Implement harmonic-space bias exclusion (large scales)
+- [x] Implement real-space "donut" smoothing (small scales)
+- [x] Compute ILC weights per needlet scale
+- [x] Apply weights to separate CMB and kSZ components
 
 ### Phase 5: Output and validation
 - [ ] Recombine needlet bands into full-sky maps
