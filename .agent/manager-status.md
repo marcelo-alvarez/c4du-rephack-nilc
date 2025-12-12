@@ -4,7 +4,7 @@
 Implement a NILC (Needlet Internal Linear Combination) pipeline for ACT cosmology data processing, following arXiv:2307.01258 Section III. The pipeline will process two ACT frequency maps (90 GHz and 150 GHz) in CAR projection to separate CMB and kSZ components.
 
 ## Current state
-- **Status**: Phase 1 complete, ready for preprocessing implementation
+- **Status**: Phase 2 mostly complete, ready for needlet decomposition
 - **Last updated**: 2025-12-12
 - **Repository**: https://github.com/marcelo-alvarez/c4du-rephack-nilc
 
@@ -18,9 +18,9 @@ Implement a NILC (Needlet Internal Linear Combination) pipeline for ACT cosmolog
 
 ### Phase 2: Preprocessing implementation (Section III-A)
 - [x] Implement basic map I/O and verify data access
-- [ ] Implement inpainting for high-significance detections
-- [ ] Implement Fourier-domain filtering for scan-synchronous modes
-- [ ] Implement beam difference corrections (harmonic space)
+- [ ] Implement inpainting for high-significance detections (deferred)
+- [x] Implement Fourier-domain filtering for scan-synchronous modes
+- [x] Implement beam difference corrections (harmonic space)
 - [ ] Implement color corrections for component spectral response
 
 ### Phase 3: Needlet decomposition (Section III-B)
@@ -55,6 +55,7 @@ Implement a NILC (Needlet Internal Linear Combination) pipeline for ACT cosmolog
 - 2025-12-12: Worker #1d completed - updated and pushed manager-status.md to reflect Phase 1 completion
 - 2025-12-12: Worker #2 completed - implemented map I/O utilities and successfully tested reading ACT 220 GHz source-free map (3 Stokes components, 10320x43200 CAR projection)
 - 2025-12-12: Worker #2b completed - fixed visualization by downsampling maps (20x factor), reduced enplot output from 799 MB to 584 KB
+- 2025-12-12: Worker #3 completed - implemented preprocessing functions (Fourier filtering, beam corrections), tested with ACT mask (231M pixels)
 
 ## Notes and decisions
 - Input: Two CAR-projected maps (90 GHz and 150 GHz) with temperature and polarization
