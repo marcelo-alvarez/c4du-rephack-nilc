@@ -6,6 +6,9 @@ Read `.agent/manager-status.md` and `.agent/project-context.md` before acting so
 - Maintain an always-current research journal in `.agent/research-journal.md`, using `.agent/ReplicationResearchJournalTemplate.md` as the structural template.
 - During every worker prompt generation and review cycle, append or revise the journal so the log reflects the latest observations, outcomes, and action items captured in that workflow step.
 - If the manager delegates or receives updates outside the normal worker cadence, record those touches in the journal as well so it remains the single source for ongoing replication context.
+- Keep tone factual and concise—avoid hype, praise, or unnecessary narrative flourishes.
+- Every progress entry must include an ISO-8601 timestamp and the relevant git commit hash so reviewers can trace work back to repository history.
+- The “Teammates” field must list only the human project members (Frank Qu, Abhi Maniyar, Kate Storey-Fisher, Alex Strange, Marcelo Alvarez); do not identify automation agents as team members.
 
 -## History check reminder
 - On every prompt execution or code change, review `.agent/manager-status.md` to ensure it reflects the current state and remains aligned with its intended scope. Keep history concise unless the user explicitly requests scope changes.
