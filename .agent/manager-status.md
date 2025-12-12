@@ -4,10 +4,10 @@
 Implement a NILC (Needlet Internal Linear Combination) pipeline for ACT cosmology data processing, following arXiv:2307.01258 Section III. The pipeline will process two ACT frequency maps (90 GHz and 150 GHz) in CAR projection to separate CMB and kSZ components.
 
 ## Current state
-- **Status**: Phase 2 in progress - color corrections next
+- **Status**: Phase 2 complete - ready for Phase 3 (needlet decomposition)
 - **Last updated**: 2025-12-12
 - **Repository**: https://github.com/marcelo-alvarez/c4du-rephack-nilc
-- **Next worker**: Worker #4 - implement color corrections for component spectral response
+- **Next worker**: Worker #5 - implement needlet decomposition (Section III-B)
 
 ## Milestones
 
@@ -22,7 +22,7 @@ Implement a NILC (Needlet Internal Linear Combination) pipeline for ACT cosmolog
 - [ ] Implement inpainting for high-significance detections (deferred)
 - [x] Implement Fourier-domain filtering for scan-synchronous modes
 - [x] Implement beam difference corrections (harmonic space)
-- [ ] Implement color corrections for component spectral response
+- [x] Implement color corrections for component spectral response
 
 ### Phase 3: Needlet decomposition (Section III-B)
 - [ ] Implement axisymmetric needlet kernel (Eq. 2 from paper)
@@ -44,7 +44,6 @@ Implement a NILC (Needlet Internal Linear Combination) pipeline for ACT cosmolog
 - [ ] Implement basic validation (power spectra, visual checks)
 
 ## Outstanding tasks
-- Implement preprocessing module (Phase 2)
 - Implement needlet decomposition (Phase 3)
 - Implement ILC component separation (Phase 4)
 - Implement output and validation (Phase 5)
@@ -57,6 +56,7 @@ Implement a NILC (Needlet Internal Linear Combination) pipeline for ACT cosmolog
 - 2025-12-12: Worker #2 completed - implemented map I/O utilities and successfully tested reading ACT 220 GHz source-free map (3 Stokes components, 10320x43200 CAR projection)
 - 2025-12-12: Worker #2b completed - fixed visualization by downsampling maps (20x factor), reduced enplot output from 799 MB to 584 KB
 - 2025-12-12: Worker #3 completed - implemented preprocessing functions (Fourier filtering, beam corrections), tested with ACT mask (231M pixels)
+- 2025-12-12: Worker #4 completed - implemented color corrections using actual PA5 passbands; effective frequencies: 94.96 GHz (90 band), 147.02 GHz (150 band); correction factors ~1.002-1.005
 
 ## Notes and decisions
 - Input: Two CAR-projected maps (90 GHz and 150 GHz) with temperature and polarization

@@ -47,8 +47,11 @@ Additional coordination pass to sync the research journal itself: manager captur
 2025-12-12 14:09 PST — Commit 97ede9a  
 A researcher and the manager aligned on finishing Phase 2 before touching needlets. The manager drafted Worker Prompt #4 to tackle color corrections using ACT component spectra, emphasizing how spectral response ties into the beam-matching code path so the science in Section III-A stays coherent.
 
-2025-12-12 14:13 PST — Commit 4fef242  
+2025-12-12 14:13 PST — Commit 4fef242
 Follow-up chat uncovered measured PA5 passbands on disk, so the manager revised the prompt: workers must load the actual passband tables, integrate the CMB/kSZ spectra, and log where the data live. This keeps the color-correction plan grounded in real instrument response instead of analytical guesses.
+
+2025-12-12 14:32 PST — Commit 9ad439d
+Worker #4 completed color corrections using actual PA5 passbands. Implemented `color_corrections.py` with passband loader, component spectrum integrator (CMB thermodynamic derivative dB_ν/dT), and color correction applicator. Test validated passband loading (90 GHz: 70.98-124.50 GHz peak at 98.29; 150 GHz: 122.31-184.56 GHz peak at 149.61), computed effective frequencies (94.96 GHz, 147.02 GHz for CMB), and correction factors (~1.002, ~1.005). Small corrections confirm maps are close to thermodynamic units but normalization is now explicit. Phase 2 preprocessing complete; ready for Phase 3 needlet decomposition.
 
 ---
 
