@@ -7,7 +7,8 @@ Read `.agent/manager-status.md` and `.agent/project-context.md` before acting so
 - During every worker prompt generation and review cycle, append or revise the journal so the log reflects the latest observations, outcomes, and action items captured in that workflow step.
 - If the manager delegates or receives updates outside the normal worker cadence, record those touches in the journal as well so it remains the single source for ongoing replication context.
 - Keep tone factual and concise—avoid hype, praise, or unnecessary narrative flourishes.
-- Every progress entry must include an ISO-8601 timestamp and the relevant git commit hash so reviewers can trace work back to repository history.
+- Every progress entry must include a PST timestamp in `YYYY-MM-DD HH:MM PST` format plus the relevant git commit hash so reviewers can trace work back to repository history.
+- Use cumulative, narrative-style entries (no tables); append new paragraphs for each update and never delete prior journal content unless the user explicitly instructs you to do so.
 - The “Teammates” field must list only the human project members (Frank Qu, Abhi Maniyar, Kate Storey-Fisher, Alex Strange, Marcelo Alvarez); do not identify automation agents as team members.
 
 -## History check reminder
