@@ -4,9 +4,10 @@
 Implement a NILC (Needlet Internal Linear Combination) pipeline for ACT cosmology data processing, following arXiv:2307.01258 Section III. The pipeline will process two ACT frequency maps (90 GHz and 150 GHz) in CAR projection to separate CMB and kSZ components.
 
 ## Current state
-- **Status**: Phase 2 mostly complete, ready for needlet decomposition
+- **Status**: Phase 2 in progress - color corrections next
 - **Last updated**: 2025-12-12
 - **Repository**: https://github.com/marcelo-alvarez/c4du-rephack-nilc
+- **Next worker**: Worker #4 - implement color corrections for component spectral response
 
 ## Milestones
 

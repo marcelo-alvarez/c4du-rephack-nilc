@@ -102,6 +102,28 @@
 
 ---
 
+## 2025-12-12 - Session 2: Continuing Phase 2 Preprocessing
+
+### Manager Session: Worker Prompt #4 Drafted
+**Step**: Prepare color corrections implementation
+**Manager Activity**:
+- Reviewed current Phase 2 status - Fourier filtering and beam corrections complete
+- Identified remaining Phase 2 task: color corrections for component spectral response
+- Drafted Worker #4 prompt to implement color corrections
+
+**Worker #4 Prompt Summary**:
+- Create `color_corrections.py` module with component spectral response functions
+- Implement CMB and kSZ spectral scaling (flat spectrum for kSZ)
+- Integrate color corrections with existing beam matching from `beams.py`
+- Test with actual 90 GHz and 150 GHz ACT maps
+- Target: Color-corrected maps that account for spectral differences between components
+
+**Decision**: Continue Phase 2 completion before moving to Phase 3 (needlet decomposition)
+
+**Status**: Worker prompt drafted, ready for human operator to execute in worker session
+
+---
+
 **Interim Observations**
 
 **AI Strengths**:
