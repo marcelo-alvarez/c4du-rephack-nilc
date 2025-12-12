@@ -20,6 +20,15 @@ We have two ACT frequency maps (90 GHz and 150 GHz) in CAR projection with both 
 - Dependencies available: `numpy`, `scipy`, `matplotlib`, `pixell`, `healpy`.
 - Processing must respect ACT beam profiles with scale-dependent color corrections for frequency-dependent beams.
 
+## Data locations
+- **Maps**: `/scratch/jiaqu/hack_data/maps/`
+  - Use non-HEALPix format (CAR projection)
+  - Use source-free (`srcfree`) versions
+  - Use AA (Atacama Array) maps
+  - Frequencies: 90 GHz and 150 GHz
+- **Beams**: `/scratch/jiaqu/hack_data/maps/beams/main_beams/`
+- **Data documentation**: https://lambda.gsfc.nasa.gov/product/act/act_dr6.02/act_dr6.02_maps_info.html
+
 ## Operational notes for workers
 - Anchor any worker prompt with: `Read .agent/worker-instructions.md and .agent/project-context.md`.
 - Provide clear command lists, prioritize raster operations via `pixell` transforms, and include steps to write both CAR and HEALPix maps.
