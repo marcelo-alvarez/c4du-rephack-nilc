@@ -4,16 +4,17 @@
 Implement a NILC (Needlet Internal Linear Combination) pipeline for ACT cosmology data processing, following arXiv:2307.01258 Section III. The pipeline will process two ACT frequency maps (90 GHz and 150 GHz) in CAR projection to separate CMB and kSZ components.
 
 ## Current state
-- **Status**: Project initialization
+- **Status**: Phase 1 complete, ready for preprocessing implementation
 - **Last updated**: 2025-12-12
-- **Repository**: Not yet initialized
+- **Repository**: https://github.com/marcelo-alvarez/c4du-rephack-nilc
 
 ## Milestones
 
 ### Phase 1: Project setup
-- [ ] Initialize git repository
-- [ ] Set up Python project structure (directories, requirements)
-- [ ] Create placeholder test framework
+- [x] Initialize git repository
+- [x] Set up Python project structure (directories, requirements)
+- [x] Create placeholder test framework
+- [x] Push project structure to GitHub
 
 ### Phase 2: Preprocessing implementation (Section III-A)
 - [ ] Implement inpainting for high-significance detections
@@ -41,12 +42,15 @@ Implement a NILC (Needlet Internal Linear Combination) pipeline for ACT cosmolog
 - [ ] Implement basic validation (power spectra, visual checks)
 
 ## Outstanding tasks
-None yet; project is in initialization phase.
+- Implement preprocessing module (Phase 2)
+- Implement needlet decomposition (Phase 3)
+- Implement ILC component separation (Phase 4)
+- Implement output and validation (Phase 5)
 
 ## Recent completions
-- 2025-12-12: Created `.agent/` directory structure
-- 2025-12-12: Moved instruction files to `.agent/`
-- 2025-12-12: Initialized manager-status.md
+- 2025-12-12: Created `.agent/` directory structure and initialized manager-status.md
+- 2025-12-12: Worker #1 completed - initialized git repo, created Python package structure (src/nilc with 5 modules), test framework, requirements.txt, setup.py, README.md
+- 2025-12-12: Worker #1c completed - successfully pushed all project files to GitHub (17 files total)
 
 ## Notes and decisions
 - Input: Two CAR-projected maps (90 GHz and 150 GHz) with temperature and polarization
