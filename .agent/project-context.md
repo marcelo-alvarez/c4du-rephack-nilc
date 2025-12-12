@@ -27,6 +27,7 @@ We have two ACT frequency maps (90 GHz and 150 GHz) in CAR projection with both 
   - Use AA (Atacama Array) maps
   - Frequencies: 90 GHz and 150 GHz
 - **Beams**: `/scratch/jiaqu/hack_data/maps/beams/main_beams/`
+- **Mask**: `/scratch/jiaqu/hack_data/masks/ilc_footprint_mask.fits` (analysis footprint)
 - **Data documentation**: https://lambda.gsfc.nasa.gov/product/act/act_dr6.02/act_dr6.02_maps_info.html
 
 ## Operational notes for workers

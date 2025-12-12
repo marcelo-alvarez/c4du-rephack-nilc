@@ -17,6 +17,7 @@ Implement a NILC (Needlet Internal Linear Combination) pipeline for ACT cosmolog
 - [x] Push project structure to GitHub
 
 ### Phase 2: Preprocessing implementation (Section III-A)
+- [x] Implement basic map I/O and verify data access
 - [ ] Implement inpainting for high-significance detections
 - [ ] Implement Fourier-domain filtering for scan-synchronous modes
 - [ ] Implement beam difference corrections (harmonic space)
@@ -51,6 +52,9 @@ Implement a NILC (Needlet Internal Linear Combination) pipeline for ACT cosmolog
 - 2025-12-12: Created `.agent/` directory structure and initialized manager-status.md
 - 2025-12-12: Worker #1 completed - initialized git repo, created Python package structure (src/nilc with 5 modules), test framework, requirements.txt, setup.py, README.md
 - 2025-12-12: Worker #1c completed - successfully pushed all project files to GitHub (17 files total)
+- 2025-12-12: Worker #1d completed - updated and pushed manager-status.md to reflect Phase 1 completion
+- 2025-12-12: Worker #2 completed - implemented map I/O utilities and successfully tested reading ACT 220 GHz source-free map (3 Stokes components, 10320x43200 CAR projection)
+- 2025-12-12: Worker #2b completed - fixed visualization by downsampling maps (20x factor), reduced enplot output from 799 MB to 584 KB
 
 ## Notes and decisions
 - Input: Two CAR-projected maps (90 GHz and 150 GHz) with temperature and polarization
