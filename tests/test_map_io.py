@@ -42,25 +42,33 @@ def test_read_and_plot_map():
     print(f"  Mean: {np.mean(temp_map):.3e}")
     print(f"  Std: {np.std(temp_map):.3e}")
 
+    # Downsample for visualization to reduce file size
+    # Take every Nth pixel to reduce resolution
+    downsample_factor = 20
+    temp_map_ds = temp_map[::downsample_factor, ::downsample_factor]
+    print(f"Downsampled map shape for plotting: {temp_map_ds.shape}")
+
     # Create output directory
     output_dir = "data/output/test_plots"
     os.makedirs(output_dir, exist_ok=True)
 
-    # Plot and save using matplotlib
+    # Plot and save using matplotlib with downsampled data
     plt.figure(figsize=(12, 8))
-    plt.imshow(temp_map, cmap='RdBu_r', aspect='auto')
+    plt.imshow(temp_map_ds, cmap='RdBu_r', aspect='auto', interpolation='nearest')
     plt.colorbar(label='Temperature [K or uK]')
-    plt.title(f'ACT 220 GHz Map (Source-Free)\n{map_file}')
-    plt.xlabel('X pixel')
-    plt.ylabel('Y pixel')
+    plt.title(f'ACT 220 GHz Map (Source-Free, downsampled)\n{map_file}')
+    plt.xlabel('X pixel (downsampled)')
+    plt.ylabel('Y pixel (downsampled)')
     output_file = os.path.join(output_dir, 'act_f220_srcfree_test.png')
-    plt.savefig(output_file, dpi=150, bbox_inches='tight')
+    plt.savefig(output_file, dpi=100, bbox_inches='tight')
     plt.close()
     print(f"Saved plot to: {output_file}")
 
-    # Also save using enplot for comparison
+    # Use enplot with downsampled map for more compact output
     output_file_enplot = os.path.join(output_dir, 'act_f220_srcfree_test_enplot.png')
-    enplot.write(output_file_enplot, enplot.plot(temp_map, colorbar=True))
+    # Convert downsampled numpy array back to enmap for enplot
+    temp_map_ds_enmap = enmap.ndmap(temp_map_ds, temp_map.wcs)
+    enplot.write(output_file_enplot, enplot.plot(temp_map_ds_enmap, colorbar=True, downgrade=2))
     print(f"Saved enplot version to: {output_file_enplot}")
 
     return True
