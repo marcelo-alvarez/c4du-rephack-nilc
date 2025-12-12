@@ -19,6 +19,7 @@ We have two ACT frequency maps (90 GHz and 150 GHz) in CAR projection with both 
 - Two frequencies only; all covariance matrices, ILC weights, and component separation use this pair.
 - Dependencies available: `numpy`, `scipy`, `matplotlib`, `pixell`, `healpy`.
 - Processing must respect ACT beam profiles with scale-dependent color corrections for frequency-dependent beams.
+- Frequency response functions implemented for CMB (f=1), kSZ (f=1), tSZ (f(x) = x(e^x+1)/(e^x-1) - 4), and CIB (modified blackbody: ν^β B_ν(T_dust) with T_dust=20K, β=1.5, normalized at 353 GHz).
 
 ## Data locations
 - **Maps**: `/scratch/jiaqu/hack_data/maps/`
@@ -28,10 +29,14 @@ We have two ACT frequency maps (90 GHz and 150 GHz) in CAR projection with both 
   - Frequencies: 90 GHz and 150 GHz
 - **Beams**: `/scratch/jiaqu/hack_data/maps/beams/main_beams/`
 - **Mask**: `/scratch/jiaqu/hack_data/masks/ilc_footprint_mask.fits` (analysis footprint)
+- **Passbands**: `/home/jiaqu/NILC/data/ACT_ancillary/`
+  - PA5 90 GHz: `PA5_avg_passband_90_wErr.txt` (3 columns: frequency [GHz], response, error)
+  - PA5 150 GHz: `PA5_avg_passband_150_wErr.txt` (3 columns: frequency [GHz], response, error)
+  - Passbands are needed for color corrections to account for component spectral response
 - **Data documentation**: https://lambda.gsfc.nasa.gov/product/act/act_dr6.02/act_dr6.02_maps_info.html
 
 ## Operational notes for workers
-- Anchor any worker prompt with: `Read .agent/worker-instructions.md and .agent/project-context.md`.
+- Anchor any worker prompt with: `Read agent/worker-instructions.md and agent/project-context.md`.
 - Provide clear command lists, prioritize raster operations via `pixell` transforms, and include steps to write both CAR and HEALPix maps.
 - Output artifacts should include CAR FITS files (e.g., via `pixell.enmap.write_map`) and HEALPix FITS (e.g., via `healpy.write_map`) for the CMB and kSZ components.
 - Include any validation (e.g., visual spot checks or simple power spectrum comparisons) only if the prompt explicitly requests it.
