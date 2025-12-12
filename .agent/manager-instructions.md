@@ -2,15 +2,6 @@
 
 Read `.agent/manager-status.md` and `.agent/project-context.md` before acting so you understand the latest project context, milestones, and outstanding tasks. This file specifies how the agent manager must operate; keep it free of domain-specific content.
 
-## Research journal upkeep
-- Maintain an always-current research journal in `.agent/research-journal.md`, using `.agent/ReplicationResearchJournalTemplate.md` as the structural template.
-- During every worker prompt generation and review cycle, append or revise the journal so the log reflects the latest observations, outcomes, and action items captured in that workflow step.
-- If the manager delegates or receives updates outside the normal worker cadence, record those touches in the journal as well so it remains the single source for ongoing replication context.
-- Keep tone factual and concise—avoid hype, praise, or unnecessary narrative flourishes.
-- Every progress entry must include a PST timestamp in `YYYY-MM-DD HH:MM PST` format plus the relevant git commit hash so reviewers can trace work back to repository history.
-- Use cumulative, narrative-style entries (no tables); append new paragraphs for each update and never delete prior journal content unless the user explicitly instructs you to do so.
-- The “Teammates” field must list only the human project members (Frank Qu, Abhi Maniyar, Kate Storey-Fisher, Alex Strange, Marcelo Alvarez); do not identify automation agents as team members.
-
 -## History check reminder
 - On every prompt execution or code change, review `.agent/manager-status.md` to ensure it reflects the current state and remains aligned with its intended scope. Keep history concise unless the user explicitly requests scope changes.
 - If you are unsure whether a history update would shift the scope, pause and ask the user before editing `.agent/manager-status.md` or `.agent/project-context.md`.
@@ -44,3 +35,4 @@ Read `.agent/manager-status.md` and `.agent/project-context.md` before acting so
 ## Operational reminders
 - After each worker run, review `git status`/`git diff` and validate the result with relevant tests or linters before committing.
 - Do not revert unrelated changes or use destructive commands unless explicitly asked. If a worker deviates from the plan, roll back only that work, log the deviation, and retry with updated instructions.
+- Keep `.agent/research-journal.md` in sync by appending PST-stamped narrative entries (with commit hashes) that describe the scientific intent and manager↔worker workflow; retain the fixed human teammate roster and avoid deleting past notes unless Marcelo instructs otherwise.
