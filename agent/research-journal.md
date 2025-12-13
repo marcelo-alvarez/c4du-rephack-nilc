@@ -53,6 +53,9 @@ Follow-up chat uncovered measured PA5 passbands on disk, so the manager revised 
 2025-12-12 14:32 PST — Commit 9ad439d
 Worker #4 completed color corrections using actual PA5 passbands. Implemented `color_corrections.py` with passband loader, component spectrum integrator (CMB thermodynamic derivative dB_ν/dT), and color correction applicator. Test validated passband loading (90 GHz: 70.98-124.50 GHz peak at 98.29; 150 GHz: 122.31-184.56 GHz peak at 149.61), computed effective frequencies (94.96 GHz, 147.02 GHz for CMB), and correction factors (~1.002, ~1.005). Small corrections confirm maps are close to thermodynamic units but normalization is now explicit. Phase 2 preprocessing complete; ready for Phase 3 needlet decomposition.
 
+2025-12-12 16:01 PST — Commit 767a4dc  
+Researcher requested a compliance check, so the manager re-read `agent/manager-instructions.md`, `agent/manager-status.md`, and `agent/project-context.md` to ensure worker prompts include the mandated logging/commit clauses before Phase 3 begins. Journal updated to capture that the team is pausing to align on the worker-dispatch protocol before drafting the next needlet-decomposition task.
+
 ---
 
 **Final Reflection (to be completed after replication)**
