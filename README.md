@@ -144,11 +144,9 @@ This is an active development project. Core components are being implemented fol
 
 If you use this code, please cite:
 ```
-Madhavacheril et al. 2023, "The Atacama Cosmology Telescope:
+Coulton et al. 2024, "The Atacama Cosmology Telescope:
 High-resolution component-separated maps across one-third of the sky"
-arXiv:2307.01258
+Physical Review D, Volume 109, Issue 6, article id.063530, arXiv:2307.01258.
 ```
-
-## Contact
-
-(Contact information to be added)
+## Team
+Frank Qu, Abhi Maniyar, Kate Storey-Fisher, Alex Strange, Marcelo Alvarez
