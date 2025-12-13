@@ -1,8 +1,8 @@
 **Research Journal**
 
-| Team Name  | ACT NILC Replication |
+| Team Name  | nILC Shake / Hot Mapz / The Needlet Ninjas |
 | :---- | :---- |
-| **Teammates** | Researcher |
+| **Teammates** | Frank Qu, Abhi Maniyar, Kate Storey-Fisher, Alex Strange, Marcelo Alvarez |
 | **Replication Target** | arXiv:2307.01258 Section III (NILC pipeline for ACT component separation) |
 | **Success definition** | Deliver a working NILC pipeline that separates CMB and kSZ from the ACT 90/150 GHz CAR maps |
 | **Data** | ACT DR6.02 CAR maps (90 & 150 GHz), beam transfer functions, ILC footprint mask |
