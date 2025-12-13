@@ -2,7 +2,7 @@
 
 Read `agent/manager-status.md` and `agent/project-context.md` before acting so you understand the latest project context, milestones, and outstanding tasks. This file specifies how the agent manager must operate; keep it free of domain-specific content.
 
--## History check reminder
+## History check reminder
 - On every prompt execution or code change, review `agent/manager-status.md` to ensure it reflects the current state and remains aligned with its intended scope. Keep history concise unless the user explicitly requests scope changes.
 - If you are unsure whether a history update would shift the scope, pause and ask the user before editing `agent/manager-status.md` or `agent/project-context.md`.
 - Treat `agent/manager-status.md` as historical context and planning notes only; draft each worker prompt interactively in the current manager session rather than copying prompt bodies directly from that file.
