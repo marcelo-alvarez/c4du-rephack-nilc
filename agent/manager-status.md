@@ -7,7 +7,7 @@ Implement a NILC (Needlet Internal Linear Combination) pipeline for ACT cosmolog
 - **Status**: Phase 3/4 parallel development - needlet decomposition pending, frequency response complete
 - **Last updated**: 2025-12-12
 - **Repository**: https://github.com/marcelo-alvarez/c4du-rephack-nilc
-- **Next worker**: Worker #6 - implement needlet decomposition (axisymmetric kernel, 26 scales) OR continue Phase 4 ILC implementation
+- **Next worker**: Worker #6 - implement complete needlet-ILC pipeline (needlet decomposition + end-to-end CMB extraction without deprojection)
 
 ## Milestones
 
@@ -45,9 +45,10 @@ Implement a NILC (Needlet Internal Linear Combination) pipeline for ACT cosmolog
 - [ ] Implement basic validation (power spectra, visual checks)
 
 ## Outstanding tasks
-- Implement needlet decomposition (Phase 3)
-- Implement ILC component separation (Phase 4)
-- Implement output and validation (Phase 5)
+- Worker #6: Implement complete needlet-ILC pipeline for end-to-end CMB extraction without deprojection
+  - Create needlet decomposition module (Phase 3)
+  - Integrate with existing ILC components (Phase 4)
+  - Implement full pipeline with output generation (Phase 5)
 
 ## Recent completions
 - 2025-12-12: Created `agent/` directory structure and initialized manager-status.md
