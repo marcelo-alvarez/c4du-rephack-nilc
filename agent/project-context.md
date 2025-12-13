@@ -22,18 +22,42 @@ We have two ACT frequency maps (90 GHz and 150 GHz) in CAR projection with both 
 - Frequency response functions implemented for CMB (f=1), kSZ (f=1), tSZ (f(x) = x(e^x+1)/(e^x-1) - 4), and CIB (modified blackbody: ν^β B_ν(T_dust) with T_dust=20K, β=1.5, normalized at 353 GHz).
 
 ## Data locations
-- **Maps**: `/scratch/jiaqu/hack_data/maps/`
+- **Maps**: `/global/cfs/cdirs/act/data/act_dr6/dr6.02/maps/published/`
   - Use non-HEALPix format (CAR projection)
-  - Use source-free (`srcfree`) versions
+  - Use source-free (`srcfree`) versions: `act_dr4dr6_coadd_AA_daynight_f090_map_srcfree.fits`, `act_dr4dr6_coadd_AA_daynight_f150_map_srcfree.fits`
   - Use AA (Atacama Array) maps
   - Frequencies: 90 GHz and 150 GHz
-- **Beams**: `/scratch/jiaqu/hack_data/maps/beams/main_beams/`
-- **Mask**: `/scratch/jiaqu/hack_data/masks/ilc_footprint_mask.fits` (analysis footprint)
-- **Passbands**: `/home/jiaqu/NILC/data/ACT_ancillary/`
-  - PA5 90 GHz: `PA5_avg_passband_90_wErr.txt` (3 columns: frequency [GHz], response, error)
-  - PA5 150 GHz: `PA5_avg_passband_150_wErr.txt` (3 columns: frequency [GHz], response, error)
-  - Passbands are needed for color corrections to account for component spectral response
+- **Beams**: `/global/cfs/cdirs/act/data/act_dr6/dr6.02/beams/main_beams/nominal/`
+  - PA5 90 GHz: `coadd_pa5_f090_night_beam_tform_jitter_cmb.txt`
+  - PA5 150 GHz: `coadd_pa5_f150_night_beam_tform_jitter_cmb.txt`
+- **Mask**: `/global/cfs/cdirs/act/data/act_dr6/dr6.02/nilc/published/ilc_footprint_mask.fits` (analysis footprint)
 - **Data documentation**: https://lambda.gsfc.nasa.gov/product/act/act_dr6.02/act_dr6.02_maps_info.html
+
+## Module structure
+- `src/nilc/needlets/` - Needlet decomposition module
+  - `decomposition.py` - Axisymmetric needlet kernels (Eq. 2 of arXiv:2307.01258), decomposition and recombination
+  - `pipeline.py` - End-to-end NILC pipeline for CMB extraction
+- `src/nilc/ilc/` - ILC weight computation
+  - `weights.py` - Constrained ILC weight computation with Lagrange multipliers
+  - `covariance.py` - Bias-mitigated covariance matrix computation
+  - `frequency_response.py` - CMB, kSZ, tSZ, CIB frequency response functions
+- `src/nilc/preprocessing/` - Map preprocessing
+  - `filters.py` - Fourier-domain filtering
+  - `beams.py` - Beam correction utilities
+  - `color_corrections.py` - Color correction for component spectral response
+- `scripts/run_nilc.py` - Runner script for the NILC pipeline
+
+## Running the pipeline
+```bash
+cd /global/cfs/cdirs/cosmosim/slac/malvarez/hackathon/c4du-rephack-nilc
+python scripts/run_nilc.py --output-dir ./output --component I --target cmb
+```
+
+Options:
+- `--component I|Q|U` - Stokes component to process (default: I)
+- `--target cmb|ksz` - Target component to extract (default: cmb)
+- `--lmin INT` - Minimum ell for high-pass filter (default: 100)
+- `--save-intermediate` - Save intermediate needlet scale maps
 
 ## Operational notes for workers
 - Anchor any worker prompt with: `Read agent/worker-instructions.md and agent/project-context.md`.
