@@ -4,10 +4,10 @@
 Implement a NILC (Needlet Internal Linear Combination) pipeline for ACT cosmology data processing, following arXiv:2307.01258 Section III. The pipeline will process two ACT frequency maps (90 GHz and 150 GHz) in CAR projection to separate CMB and kSZ components.
 
 ## Current state
-- **Status**: Phase 3/4 parallel development - needlet decomposition pending, frequency response complete
-- **Last updated**: 2025-12-12
+- **Status**: Phase 4 mostly implemented (needlet pipeline, ILC weights, runner); Phase 5 validation pending
+- **Last updated**: 2025-12-13
 - **Repository**: https://github.com/marcelo-alvarez/c4du-rephack-nilc
-- **Next worker**: Worker #6 - implement complete needlet-ILC pipeline (needlet decomposition + end-to-end CMB extraction without deprojection)
+- **Next worker**: Worker #7 - reconcile research journal with git/PR history and remote session notes
 
 ## Milestones
 
@@ -25,30 +25,31 @@ Implement a NILC (Needlet Internal Linear Combination) pipeline for ACT cosmolog
 - [x] Implement color corrections for component spectral response
 
 ### Phase 3: Needlet decomposition (Section III-B)
-- [ ] Implement axisymmetric needlet kernel (Eq. 2 from paper)
-- [ ] Set up needlet scale configuration (26 ell_peak values)
-- [ ] Implement needlet decomposition for CAR maps
-- [ ] Validate needlet localization in ell-space
+- [x] Implement axisymmetric needlet kernel (Eq. 2 from paper)
+- [x] Set up needlet scale configuration (26 ell_peak values)
+- [x] Implement needlet decomposition for CAR maps
+- [ ] Validate needlet localization in ell-space (numerical checks still pending)
 
 ### Phase 4: ILC weights and component separation (Section III-C)
 - [x] Implement frequency response functions for components (CMB, kSZ, tSZ, CIB)
-- [ ] Implement in-band covariance matrix computation
-- [ ] Implement harmonic-space bias exclusion (large scales)
-- [ ] Implement real-space "donut" smoothing (small scales)
-- [ ] Compute ILC weights per needlet scale
-- [ ] Apply weights to separate CMB and kSZ components
+- [x] Implement in-band covariance matrix computation
+- [x] Implement harmonic-space bias exclusion (large scales)
+- [x] Implement real-space "donut" smoothing (small scales)
+- [x] Compute ILC weights per needlet scale
+- [x] Apply weights to separate CMB and kSZ components
 
 ### Phase 5: Output and validation
-- [ ] Recombine needlet bands into full-sky maps
-- [ ] Export CAR FITS files (via pixell)
-- [ ] Export HEALPix FITS files (via healpy)
+- [x] Recombine needlet bands into full-sky maps
+- [x] Export CAR FITS files (via pixell)
+- [x] Export HEALPix FITS files (via healpy)
 - [ ] Implement basic validation (power spectra, visual checks)
 
 ## Outstanding tasks
-- Worker #6: Implement complete needlet-ILC pipeline for end-to-end CMB extraction without deprojection
-  - Create needlet decomposition module (Phase 3)
-  - Integrate with existing ILC components (Phase 4)
-  - Implement full pipeline with output generation (Phase 5)
+- Worker #7: Investigate git history, GitHub PRs, and `./sessions/` artifacts to reconcile `agent/research-journal.md`
+  - Generate comprehensive journal entries highlighting researcher↔manager↔worker interactions (include timestamps/commits or PR references when available)
+  - Flag any missing context or scope decisions uncovered during the search
+  - Update journal without losing existing entries; focus on Phase 3/4 work and pipeline execution milestones
+- Phase 5 validation: design lightweight power-spectrum or visual checks on NILC outputs before closing the milestone
 
 ## Recent completions
 - 2025-12-12: Created `agent/` directory structure and initialized manager-status.md
@@ -60,6 +61,8 @@ Implement a NILC (Needlet Internal Linear Combination) pipeline for ACT cosmolog
 - 2025-12-12: Worker #3 completed - implemented preprocessing functions (Fourier filtering, beam corrections), tested with ACT mask (231M pixels)
 - 2025-12-12: Worker #4 completed - implemented color corrections using actual PA5 passbands; effective frequencies: 94.96 GHz (90 band), 147.02 GHz (150 band); correction factors ~1.002-1.005
 - 2025-12-12: Worker #5 completed - implemented frequency response functions for ILC (CMB, kSZ, tSZ, CIB); tSZ values: -1.598 (90 GHz), -0.953 (150 GHz); includes compute_response_matrix() for building constraint matrices
+- 2025-12-12: Worker #6 completed - delivered `src/nilc/needlets/` (needlet kernels + decomposition), `src/nilc/needlets/pipeline.py`, and `scripts/run_nilc.py`; pipeline loads ACT DR6.02 maps, executes preprocessing, runs needlet-ILC (with harmonic/donut bias mitigation), and writes CAR + HEALPix outputs
+- 2025-12-12: Verified full pipeline execution on ACT DR6.02 maps; end-to-end run completed preprocessing and began multi-scale needlet filtering on 446M-pixel maps without errors; validation plots still pending
 
 ## Notes and decisions
 - Input: Two CAR-projected maps (90 GHz and 150 GHz) with temperature and polarization
